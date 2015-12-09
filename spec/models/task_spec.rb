@@ -51,7 +51,7 @@ RSpec.describe Task, type: :model do
     it 'should not increment priority beyond 10' do
       task = Task.new(priority: 10)
       task.increment_priority!
-      expect(task.priority).to eq(8)
+      expect(task.priority).to eq(10)
     end
   end
 

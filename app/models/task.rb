@@ -1,4 +1,6 @@
 class Task < ActiveRecord::Base
+  belongs_to :list
+
   def toggle_complete!
     update(complete: !complete)
   end
@@ -18,7 +20,7 @@ class Task < ActiveRecord::Base
   end
 
   def decrement_priority!
-    if priority > 1 
+    if priority > 1
       update(priority: priority - 1)
     end
   end
